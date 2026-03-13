@@ -26,7 +26,7 @@ public class Ejercicio01 {
 		ArrayList<Integer> indicesPares = new ArrayList<>();
 
 		// Variable auxiliar para almacenar el número
-		int num;
+		int numero;
 
 		// Bucle do-while que le pide al usuario un número mientras que sea un entero
 		// positivo. En el bucle se van almacenando los números que introduce el usuario
@@ -34,12 +34,12 @@ public class Ejercicio01 {
 		// las posiciones de los números pares
 		do {
 			System.out.println("Introduzca un número: ");
-			num = sc.nextInt();
-			enterosPositivos.add(num);
-			if (num % 2 == 0) {
-				indicesPares.add(enterosPositivos.indexOf(num));
+			numero = sc.nextInt();
+			enterosPositivos.add(numero);
+			if (numero % 2 == 0) {
+				indicesPares.add(enterosPositivos.indexOf(numero));
 			}
-		} while (num >= 0);
+		} while (numero >= 0);
 
 		System.out.println(indicesPares);
 

@@ -22,13 +22,30 @@ public class Ejercicio02 {
 
 		int tamano = rnd.nextInt(5, 11);
 		int numero;
+		int suma = 0;
+		int media = 0;
+		int maximo = Integer.MIN_VALUE;
+		int minimo = Integer.MAX_VALUE;
 
-		do {
+		for (int i = 0; i < tamano; i++) {
 			numero = rnd.nextInt(0, 101);
 			valoresAleatorios.add(numero);
-			tamano--;
-		} while (tamano != 0);
+			suma += numero;
+			if (numero > maximo) {
+				maximo = numero;
+			}
+			if (numero < minimo) {
+				minimo = numero;
+			}
+		}
 
+		media = suma / tamano;
+
+		System.out.println(valoresAleatorios);
+		System.out.println("Suma total: " + suma);
+		System.out.println("Media: " + media);
+		System.out.println("Máximo: " + maximo);
+		System.out.println("Mínimo: " + minimo);
 	}
 
 }
