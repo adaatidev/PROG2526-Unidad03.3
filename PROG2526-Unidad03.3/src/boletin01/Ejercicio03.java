@@ -7,30 +7,22 @@ import java.util.Random;
 public class Ejercicio03 {
 
 	public static void main(String[] args) {
-
-		/*
-		 * -----------------------------------------------------------------------------
-		 * Realiza un programa que genere 30 números enteros aleatorios, con valores
-		 * comprendidos entre 1 y 10. Se deben almacenar en una colección de forma
-		 * ordenada. Pinta la colección por consola una vez rellena.
-		 * -----------------------------------------------------------------------------
-		 */
-
 		Random rnd = new Random();
 
-		ArrayList<Integer> listaOrdenada = new ArrayList<>();
+		// CREACIÓN DE LA LISTA
+		ArrayList<Integer> numeros = new ArrayList<>();
 
-		int numero;
-
+		// ASIGNACIÓN DE VALORES ALEATORIOS
 		for (int i = 0; i < 30; i++) {
-			numero = rnd.nextInt(1, 11);
-			listaOrdenada.add(numero);
+			numeros.add(rnd.nextInt(1, 11));
 		}
 
-		Collections.sort(listaOrdenada);
+		// ORDENAR LISTA
+		Collections.sort(numeros);
 
-		System.out.println(listaOrdenada);
-
+		// IMPRIME LA LISTA
+		System.out.println("Colección de 30 números ordenada:");
+		System.out.println(numeros);
 	}
 
 }

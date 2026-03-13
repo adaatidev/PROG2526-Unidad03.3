@@ -6,45 +6,34 @@ import java.util.Scanner;
 public class Ejercicio01 {
 
 	public static void main(String[] args) {
-
-		/*
-		 * -----------------------------------------------------------------------------
-		 * Crear una lista de números enteros positivos introducidos por consola hasta
-		 * que se introduzca uno negativo. A continuación, recorrer la lista y mostrar
-		 * por pantalla los índices de los elementos de valor par.
-		 * -----------------------------------------------------------------------------
-		 */
-
 		Scanner sc = new Scanner(System.in);
 
-		// Creación de lista para almacenar los números enteros positivos introducidos
-		// por el usuario
+		// CREACIÓN DE DOS LISTAS PARA ALMACENAR LOS NÚMEROS
 		ArrayList<Integer> enterosPositivos = new ArrayList<>();
-
-		// Creación de lista para almacenar las posiciones de los números pares de la
-		// lista de enteros positivos
 		ArrayList<Integer> indicesPares = new ArrayList<>();
 
-		// Variable auxiliar para almacenar el número
+		// VARIABLE AUXILIAR
 		int numero;
 
-		// Bucle do-while que le pide al usuario un número mientras que sea un entero
-		// positivo. En el bucle se van almacenando los números que introduce el usuario
-		// y con un if se comprueba si es par y se almacena su posición en la lista de
-		// las posiciones de los números pares
-		do {
-			System.out.println("Introduzca un número: ");
+		System.out.println("Introduzca números (negativo para terminar):");
+
+		// MIENTRAS QUE EL NÚMERO INTRODUCIDO SEA MAYOR QUE 0 SE SEGUIRÁ ALMACENANDO
+		while (true) {
 			numero = sc.nextInt();
+			if (numero < 0) {
+				break;
+			}
 			enterosPositivos.add(numero);
 			if (numero % 2 == 0) {
-				indicesPares.add(enterosPositivos.indexOf(numero));
+				indicesPares.add(enterosPositivos.size());
 			}
-		} while (numero >= 0);
+		}
 
-		System.out.println(indicesPares);
+		// IMPRIME LAS LISTAS
+		System.out.println("Lista completa: " + enterosPositivos);
+		System.out.println("Índices de los números pares: " + indicesPares);
 
 		sc.close();
-
 	}
 
 }

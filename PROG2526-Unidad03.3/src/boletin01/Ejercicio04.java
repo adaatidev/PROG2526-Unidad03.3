@@ -1,34 +1,28 @@
 package boletin01;
 
 import java.util.Random;
-import java.util.Set;
 import java.util.TreeSet;
 
 public class Ejercicio04 {
 
 	public static void main(String[] args) {
-
-		/*
-		 * -----------------------------------------------------------------------------
-		 * Implementa una aplicación donde se insertan 20 números enteros aleatorios
-		 * distintos, menores que 100, en una colección. Hay que asegurarse de que se
-		 * guardan 20. Deben guardarse ordenados a medida que se vayan generando, y se
-		 * mostrará la colección resultante por pantalla.
-		 * -----------------------------------------------------------------------------
-		 */
-
 		Random rnd = new Random();
 
-		Set<Integer> enterosAleatorios = new TreeSet<>();
+		// CREACIÓN DE CONJUNTO
+		TreeSet<Integer> numeros = new TreeSet<>();
 
-		int numero;
+		// VARIABLE AUXILIAR
+		int num;
 
-		for (int i = 0; i < 20; i++) {
-			numero = rnd.nextInt(1, 100);
-			enterosAleatorios.add(numero);
+		// DECLARACIÓN DE VALORES
+		while (numeros.size() < 20) {
+			num = rnd.nextInt(100);
+			numeros.add(num);
 		}
 
-		System.out.println(enterosAleatorios);
+		// IMPRIME CONJUNTO
+		System.out.println("Colección de 20 números distintos (ordenados automáticamente):");
+		System.out.println(numeros);
 
 	}
 
